@@ -1,0 +1,53 @@
+{
+  "dataset": "HAPT — Smartphone-Based Recognition of Human Activities and Postural Transitions",
+  "n_features": 561,
+  "split_sizes": {
+    "train": 6213,
+    "val": 1554,
+    "test": 3162
+  },
+  "baseline": {
+    "perceptron": {
+      "train": 0.9806856591018831,
+      "val": 0.9652509652509652,
+      "test": 0.9367488931056294
+    },
+    "mlp": {
+      "train": 0.995493320457106,
+      "val": 0.972972972972973,
+      "test": 0.9326375711574952
+    }
+  },
+  "experiments": {
+    "learning_rate": {
+      "best_lr": 0.001,
+      "best_val": 0.972972972972973
+    },
+    "regularization": {
+      "best_alpha": 0.1,
+      "best_val": 0.9761904761904762
+    },
+    "solver": {
+      "best_solver": "adam",
+      "best_val": 0.9761904761904762
+    }
+  },
+  "best_model": {
+    "train": 0.9967809431836472,
+    "val": 0.9761904761904762,
+    "test": 0.9326375711574952,
+    "params": {
+      "learning_rate_init": 0.001,
+      "alpha": 0.1,
+      "solver": "adam"
+    }
+  },
+  "conclusions": [
+    "Масштабирование признаков необходимо для Perceptron и MLP (градиентные методы чувствительны к масштабу).",
+    "Лучший learning_rate_init по validation: 0.001.",
+    "Лучший alpha (L2): 0.1.",
+    "Лучший solver по validation: adam (на test близки adam и lbfgs).",
+    "Итоговая точность лучшей MLP на test: 0.9326.",
+    "Базовый Perceptron на test: 0.9367; базовый MLP: 0.9326. На HAPT линейный Perceptron уже даёт высокую точность, MLP выигрывает в основном на сложных/переходных классах и при подборе гиперпараметров."
+  ]
+}

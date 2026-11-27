@@ -1,0 +1,96 @@
+{
+  "dataset": "wiki4HE (UCI)",
+  "n_samples": 913,
+  "n_features": 45,
+  "features": [
+    "PU1",
+    "PU2",
+    "PU3",
+    "PEU1",
+    "PEU2",
+    "PEU3",
+    "ENJ1",
+    "ENJ2",
+    "Qu1",
+    "Qu2",
+    "Qu3",
+    "Qu4",
+    "Qu5",
+    "Vis1",
+    "Vis2",
+    "Vis3",
+    "Im1",
+    "Im2",
+    "Im3",
+    "SA1",
+    "SA2",
+    "SA3",
+    "Use1",
+    "Use2",
+    "Use3",
+    "Use4",
+    "Use5",
+    "Pf1",
+    "Pf2",
+    "Pf3",
+    "JR1",
+    "JR2",
+    "BI1",
+    "BI2",
+    "Inc1",
+    "Inc2",
+    "Inc3",
+    "Inc4",
+    "Exp1",
+    "Exp2",
+    "Exp3",
+    "Exp4",
+    "Exp5",
+    "AGE",
+    "YEARSEXP"
+  ],
+  "scaling": "StandardScaler",
+  "algorithms": [
+    "KMeans",
+    "AgglomerativeClustering",
+    "DBSCAN",
+    "GaussianMixture"
+  ],
+  "best": {
+    "algorithm": "DBSCAN",
+    "silhouette": 0.325597243132977,
+    "params": {
+      "best_eps": 5.723,
+      "best_min_samples": 3,
+      "best_n_clusters": 2
+    }
+  },
+  "kmeans": {
+    "best_k": 2,
+    "best_silhouette": 0.15422405889954374
+  },
+  "agglomerative": {
+    "best_k": 2,
+    "best_linkage": "average",
+    "best_silhouette": 0.30312519328071674
+  },
+  "dbscan": {
+    "best_eps": 5.723,
+    "best_min_samples": 3,
+    "best_silhouette": 0.325597243132977,
+    "best_n_clusters": 2
+  },
+  "gmm": {
+    "best_k": 2,
+    "best_silhouette": 0.1301251441410595
+  },
+  "conclusions": [
+    "Признаки Likert-опроса масштабированы StandardScaler (обязательно для KMeans/DBSCAN/GMM).",
+    "Лучший алгоритм по silhouette: DBSCAN (0.3256).",
+    "KMeans: оптимальное k≈2.",
+    "Agglomerative: k=2, linkage=average.",
+    "DBSCAN: eps=5.723, min_samples=3 (чувствителен к плотности, часть точек может быть noise).",
+    "GMM: n_components=2.",
+    "Кластеры интерпретируются как группы преподавателей с похожим отношением/практикой использования Wikipedia."
+  ]
+}

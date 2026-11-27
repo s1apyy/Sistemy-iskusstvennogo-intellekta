@@ -1,0 +1,29 @@
+Лабораторная работа №4. Основы нейронных сетей
+Датасет: HAPT (UCI)
+
+1. Разделение выборки
+   Train=6213, Val=1554, Test=3162
+   (validation выделен из Train стратифицированно, 20%)
+
+2. Масштабирование: StandardScaler (fit на train)
+
+3–4. Базовая точность
+   Perceptron test = 0.9367
+   MLPClassifier test = 0.9326
+
+5. Лучшие параметры по validation
+   learning_rate_init = 0.001
+   alpha = 0.1
+   solver = adam
+
+Финальная модель test accuracy = 0.9326
+
+Выводы:
+ - Масштабирование признаков необходимо для Perceptron и MLP (градиентные методы чувствительны к масштабу).
+ - Лучший learning_rate_init по validation: 0.001.
+ - Лучший alpha (L2): 0.1.
+ - Лучший solver по validation: adam (на test близки adam и lbfgs).
+ - Итоговая точность лучшей MLP на test: 0.9326.
+ - Базовый Perceptron на test: 0.9367; базовый MLP: 0.9326. На HAPT линейный Perceptron уже даёт высокую точность, MLP выигрывает в основном на сложных/переходных классах и при подборе гиперпараметров.
+
+Графики: results/exp_learning_rate.png, exp_regularization.png, exp_solver.png, confusion_matrix_mlp.png, split_sizes.png

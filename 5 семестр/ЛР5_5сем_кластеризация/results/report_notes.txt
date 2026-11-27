@@ -1,0 +1,27 @@
+Лабораторная работа №5. Алгоритмы кластеризации
+Датасет: wiki4HE
+
+Объектов: 913, признаков: 45
+Scaling: StandardScaler
+
+Алгоритмы (≥3): KMeans, AgglomerativeClustering, DBSCAN, GaussianMixture
+
+Лучшие параметры:
+  KMeans: k=2, silhouette=0.1542
+  Agglomerative: k=2, linkage=average, silhouette=0.3031
+  DBSCAN: eps=5.723, min_samples=3, silhouette=0.3256
+  GMM: n=2, silhouette=0.1301
+
+Итог: лучший алгоритм — DBSCAN
+
+Выводы:
+ - Признаки Likert-опроса масштабированы StandardScaler (обязательно для KMeans/DBSCAN/GMM).
+ - Лучший алгоритм по silhouette: DBSCAN (0.3256).
+ - KMeans: оптимальное k≈2.
+ - Agglomerative: k=2, linkage=average.
+ - DBSCAN: eps=5.723, min_samples=3 (чувствителен к плотности, часть точек может быть noise).
+ - GMM: n_components=2.
+ - Кластеры интерпретируются как группы преподавателей с похожим отношением/практикой использования Wikipedia.
+
+Графики: exp_kmeans_k.png, exp_agglomerative.png, exp_dbscan.png,
+exp_gmm.png, algorithms_comparison.png, *_pca.png
